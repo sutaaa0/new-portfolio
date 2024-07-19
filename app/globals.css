@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+  background-color: #101010;
+}
+
+/* Lebar scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+/* Track (latar) scrollbar */
+::-webkit-scrollbar-track {
+  /* background: #f1f1f1; */
+  background: #101010;
+}
+
+/* Handle (thumb) scrollbar */
+::-webkit-scrollbar-thumb {
+  background: #333;
+}
+
+/* Handle saat hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
