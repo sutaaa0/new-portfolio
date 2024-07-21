@@ -2,6 +2,9 @@
 import React from "react";
 import Image from "next/image";
 import { TracingBeam } from "./ui/trechingbaen";
+import { link } from "fs";
+import Link from "next/link";
+import { LinkPreview } from "./ui/link-review";
 
 export function ContainerContent() {
   return (
@@ -21,10 +24,11 @@ export function ContainerContent() {
               )}
             </div>
 
-            <p className="text-xl mb-4 text-white">{item.title}</p>
+            <LinkPreview className="text-xl mb-4 text-white" url={item.link}>
+            {item.title}</LinkPreview>
 
-            <div className="text-sm prose prose-sm dark:prose-invert text-white">
-              {item?.image && <Image src={item.image} alt="blog thumbnail" height={1000} width={1000} className="rounded-lg mb-10 object-cover" />}
+            <div className="text-sm prose prose-sm dark:prose-invert mt-2 text-white">
+              {item?.image && <Link href={item.link}><Image src={item.image} alt="blog thumbnail" height={1000} width={1000} className="rounded-lg mb-10 object-cover" /></Link>}
               {item.description}
             </div>
           </div>
@@ -60,6 +64,7 @@ const dummyContent = [
     ),
     badge: ["React", "Next.js", "Tailwind"],
     image: "/project1.png",
+    link: "https://my-anime-list-phi.vercel.app/",
   },
   {
     title: "Website Kelas RPL 1",
@@ -87,6 +92,7 @@ const dummyContent = [
     ),
     badge: ["React", "Next.js", "Tailwind"],
     image: "/project2.png",
+    link: "https://spelgesa.vercel.app/",
   },
   {
     title: "Software House Company Profile",
@@ -107,5 +113,6 @@ const dummyContent = [
     ),
     badge: ["React", "Next.js", "Tailwind"],
     image: "/project3.png",
+    link: "https://software-house-eta.vercel.app/",
   },
 ];

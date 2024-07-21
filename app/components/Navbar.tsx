@@ -42,7 +42,7 @@ function Navbar() {
               <Link href={"https://instagram.com/sutaaa0"}>
                 <div className="flex items-center px-4 py-2 text-sm text-[#555555] hover:text-white">
                   <Instagram size={20} className="mr-2" />
-                  LinkedIn
+                  Instagram
                 </div>
               </Link>
             </div>
