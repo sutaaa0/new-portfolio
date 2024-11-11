@@ -2,34 +2,40 @@
 import React from "react";
 import Image from "next/image";
 import { TracingBeam } from "./ui/trechingbaen";
-import { link } from "fs";
 import Link from "next/link";
 import { LinkPreview } from "./ui/link-review";
 
 export function ContainerContent() {
   return (
-    <TracingBeam className="px-6 h-auto">
-      <div className="max-w-2xl mx-auto antialiased pt-4">
+    <TracingBeam className="px-7 sm:px-4 md:px-6 lg:px-8">
+      <div className="max-w-2xl mx-auto antialiased pt-3 xs:pt-4 pb-12 sm:pb-16">
         {dummyContent.map((item, itemIndex) => (
-          <div key={`content-${itemIndex}`} className="mb-10">
-            <div className="flex justify-start items-center gap-x-2">
+          <div key={`content-${itemIndex}`} className="mb-6 xs:mb-8 sm:mb-10 md:mb-12 lg:mb-16 group">
+            <div className="flex flex-wrap gap-1.5 xs:gap-2 sm:gap-2.5">
               {Array.isArray(item.badge) ? (
                 item.badge.map((badge, badgeIndex) => (
-                  <h2 key={`badge-${badgeIndex}`} className="bg-black text-white rounded-full text-sm w-fit px-4 py-1 mb-4">
+                  <h2 key={`badge-${badgeIndex}`} className="bg-black/90 text-white rounded-full text-[10px] xs:text-xs sm:text-sm w-fit px-2 xs:px-2.5 sm:px-3 md:px-4 py-0.5 xs:py-1 mb-2 xs:mb-3 sm:mb-4">
                     {badge}
                   </h2>
                 ))
               ) : (
-                <h2 className="bg-black text-white rounded-full text-sm w-fit px-4 py-1 mb-4">{item.badge}</h2>
+                <h2 className="bg-black/90 text-white rounded-full text-[10px] xs:text-xs sm:text-sm w-fit px-2 xs:px-2.5 sm:px-3 md:px-4 py-0.5 xs:py-1 mb-2 xs:mb-3 sm:mb-4">{item.badge}</h2>
               )}
             </div>
 
-            <LinkPreview className="text-xl mb-4 text-white" url={item.link}>
-            {item.title}</LinkPreview>
+            <LinkPreview className="text-base xs:text-lg sm:text-xl md:text-2xl mb-2 xs:mb-3 sm:mb-4 text-white hover:text-gray-200 transition-colors inline-block" url={item.link}>
+              {item.title}
+            </LinkPreview>
 
-            <div className="text-sm prose prose-sm dark:prose-invert mt-2 text-white">
-              {item?.image && <Link href={item.link}><Image src={item.image} alt="blog thumbnail" height={1000} width={1000} className="rounded-lg mb-10 object-cover" /></Link>}
-              {item.description}
+            <div className="prose prose-sm xs:prose sm:prose-base lg:prose-lg mt-2 text-white ">
+              {item?.image && (
+                <Link href={item.link} className="block transform transition-transform duration-300 group-hover:scale-[1.02]">
+                  <div className="relative w-full aspect-[16/9] mb-3 xs:mb-4 sm:mb-5 md:mb-6 rounded-lg overflow-hidden">
+                    <Image src={item.image} alt="blog thumbnail" fill className="rounded-lg object-cover transform transition-transform duration-500 group-hover:scale-105" />
+                  </div>
+                </Link>
+              )}
+              <div className="text-white">{item.description}</div>
             </div>
           </div>
         ))}

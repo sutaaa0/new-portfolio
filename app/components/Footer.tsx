@@ -3,40 +3,89 @@ import React from "react";
 
 function Footer() {
   return (
-    <div className="sm:h-[300px] h-auto border-t border-[#161616] mt-12 w-full flex flex-col justify-center px-4 sm:px-[200px] py-8 sm:gap-y-10">
-      <div className="flex justify-between items-center">
-        <div>
-          <h1 className="text-[#555555] text-md font-bold">DODI SUTA</h1>
+    <footer className="w-full border-t border-[#161616] mt-12 py-8 px-4 md:px-8 lg:px-[200px]">
+      {/* Main footer content */}
+      <div className="flex flex-col md:flex-row justify-between gap-8 md:gap-4 mb-12">
+        {/* Logo/Brand */}
+        <div className="text-center md:text-left">
+          <h1 className="text-[#555555] text-lg font-bold">DODI SUTA</h1>
         </div>
-        <div className="flex gap-x-12">
-          <div className="flex flex-col gap-y-6">
-            <h1 className="text-[#555555] text-xs">MAIN</h1>
-            <div className="text-white flex flex-col gap-y-5">
-              <Link href={"/"}>Work</Link>
-              <Link href={"/Info"}>Info</Link>
-            </div>
+
+        {/* Navigation Links */}
+        <div className="flex flex-wrap justify-center md:justify-end gap-8 md:gap-12">
+          {/* Main Links */}
+          <div className="flex flex-col gap-6">
+            <h2 className="text-[#555555] text-xs uppercase text-center md:text-left">
+              Main
+            </h2>
+            <nav className="text-white flex flex-col gap-4 text-center md:text-left">
+              <Link href="/" className="hover:text-[#555555] transition-colors">
+                Work
+              </Link>
+              <Link href="/Info" className="hover:text-[#555555] transition-colors">
+                Info
+              </Link>
+            </nav>
           </div>
-          <div className="flex flex-col gap-y-6">
-            <h1 className="text-[#555555] text-xs">CONTACT</h1>
-            <div className="flex flex-col gap-y-3 text-white">
-              <Link href={"https://instagram.com/sutaaa0"}>Instagram</Link>
-              <Link href={"https://linkedin.com/sutaaa0"}>LinkedIn</Link>
-              <Link href={"https://github.com/sutaaa0"}>Github</Link>
-              <Link href={"mailto:dodisuta0@gmail.com"}>Gmail</Link>
-            </div>
+
+          {/* Contact Links */}
+          <div className="flex flex-col gap-6">
+            <h2 className="text-[#555555] text-xs uppercase text-center md:text-left">
+              Contact
+            </h2>
+            <nav className="text-white flex flex-col gap-4 text-center md:text-left">
+              <Link
+                href="https://instagram.com/sutaaa0"
+                className="hover:text-[#555555] transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Instagram
+              </Link>
+              <Link
+                href="https://linkedin.com/sutaaa0"
+                className="hover:text-[#555555] transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                LinkedIn
+              </Link>
+              <Link
+                href="https://github.com/sutaaa0"
+                className="hover:text-[#555555] transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Github
+              </Link>
+              <Link
+                href="mailto:dodisuta0@gmail.com"
+                className="hover:text-[#555555] transition-colors"
+              >
+                Gmail
+              </Link>
+            </nav>
           </div>
         </div>
       </div>
-      <div className="flex sm:flex-row gap-y-5 flex-col justify-center items-start sm:justify-between sm:items-center">
-        <div className="flex flex-col gap-y-1">
-          <h2 className="text-white text-md">© 2024 Dodi Suta .All rights reserved.</h2>
-          <p className="text-[#555555] text-xs">Made with love and coffee (50% sugar, less ice)</p>
+
+      {/* Footer Bottom */}
+      <div className="flex flex-col gap-6 md:flex-row md:justify-between text-center md:text-left">
+        <div className="flex flex-col gap-2">
+          <h2 className="text-white text-sm">
+            © 2024 Dodi Suta. All rights reserved.
+          </h2>
+          <p className="text-[#555555] text-xs">
+            Made with love and coffee (50% sugar, less ice)
+          </p>
         </div>
         <div>
-          <p className="text-[#555555] text-xs">Last updated by Dodi on July 16, 2024, 8:57 PM</p>
+          <p className="text-[#555555] text-xs">
+            Last updated by Dodi on July 16, 2024, 8:57 PM
+          </p>
         </div>
       </div>
-    </div>
+    </footer>
   );
 }
 
