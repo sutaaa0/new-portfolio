@@ -11,6 +11,21 @@ const nextConfig = {
       },
     ],
   },
+
+  async redirects() {
+    return [
+      {
+        source: "/",
+        destination: "/dev",
+        permanent: false, // kalau nanti portfolionya udah jadi, gampang dicabut
+      },
+      {
+        source: "/info",
+        destination: "/dev",
+        permanent: false,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
