@@ -40,7 +40,7 @@ export default function MinimalUnderConstruction() {
 
             <div className="flex flex-col sm:flex-row flex-wrap gap-4">
               <Link
-                href="https://github.com/dodisuta"
+                href="https://github.com/sutaaa0"
                 target="_blank"
                 className="flex items-center gap-2 px-4 py-2 rounded-lg border border-gray-300 hover:border-gray-400 transition-colors hover:bg-white shadow-sm"
               >
@@ -49,11 +49,11 @@ export default function MinimalUnderConstruction() {
               </Link>
 
               <Link
-                href="mailto:hello@dodisuta.dev"
+                href="mailto:dodisuta0@gmail.com"
                 className="flex items-center gap-2 px-4 py-2 rounded-lg border border-gray-300 hover:border-gray-400 transition-colors hover:bg-white shadow-sm"
               >
                 <Mail size={18} />
-                hello@dodisuta.dev
+                hello@dodisuta0
               </Link>
 
               <Link
